@@ -1,0 +1,45 @@
+buildscript {
+    ext.kotlin_version = "1.3.72"
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'java-gradle-plugin'
+
+repositories {
+    jcenter()
+    google()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+gradlePlugin {
+    plugins {
+        version {
+            // 包名
+            id = 'com.firstouch.version'
+            // 在根目录下创建类 DependencyVersionPlugin 继承 Plugin<Project>
+            implementationClass = 'com.firstouch.version.DependencyVersionPlugin'
+        }
+    }
+}

@@ -1,2 +1,5 @@
+includeBuild("version")
+
+include ':library_base'
 include ':app'
 rootProject.name = "firstocuh-androidx"
