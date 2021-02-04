@@ -1,4 +1,3 @@
-
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -18,14 +17,50 @@ android {
         versionCode AndroidConfig.VERSION_CODE
         versionName AndroidConfig.VERSION_NAME
 
+
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
+    // 配置渠道 一定要配置
+    flavorDimensions "flavor"
+    // 满足 同一个project，根据一个很小的区分，来打不同的包 在as 左下角 Build Variant中查看编译
+    productFlavors {
+        dev{
+            dimension "flavor"
+            // BuildConfig.HTTP_BASE 取值
+            buildConfigField("String", "HTTP_BASE", '"https://www.xxx.com/dev/"')
+            // AndroidManifest 配置key值
+            manifestPlaceholders = [app_id_value        : "123456"
+                                    ,app_key_value      : "654321"]
+        }
+        tes{
+            dimension "flavor"
+            buildConfigField("String", "HTTP_BASE", '"https://www.xxx.com/tes/"')
+            manifestPlaceholders = [app_id_value        : "111111"
+                                    ,app_key_value      : "222222"]
+
+        }
+        pro{
+            dimension "flavor"
+            buildConfigField("String", "HTTP_BASE", '"https://www.xxx.com/pro/"')
+            manifestPlaceholders = [app_id_value        : "223344"
+                                    ,app_key_value      : "556677"]
+
+        }
+    }
+
+    // 一般都会有 debug 或者release，标示编译的类型，通常在混淆代码、可调式、资源压缩上做一些区分
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -40,6 +75,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(":library_base")
-
 
 }

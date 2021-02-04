@@ -40,7 +40,7 @@ dependencies {
 
     api KotlinDependency.KOTLIN_STDLIB
 
-    api AndroidX.APP_COMPAT
+    api AndroidX.CORE_KTX
     api AndroidX.APP_COMPAT
     api AndroidX.CONSTRAINT_LAYOUT
     api AndroidX.LIFECYCLE_VIEW_DATA_KTX
