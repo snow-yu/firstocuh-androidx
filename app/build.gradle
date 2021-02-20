@@ -76,6 +76,6 @@ dependencies {
 
     implementation project(":library_base")
 
-//    implementation 'com.github.snow-yu:firstouch-androidx:1.0.0'
+//    implementation 'com.github.snow-yu:firstouch-androidx:1.0.1'
 
 }

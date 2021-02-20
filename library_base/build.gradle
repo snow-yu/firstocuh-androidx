@@ -9,7 +9,7 @@ plugins {
 }
 
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.snow'
+group = 'com.github.snow-yu'
 
 android {
     compileSdkVersion AndroidConfig.COMPILE_SDK_VERSION
@@ -35,7 +35,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
