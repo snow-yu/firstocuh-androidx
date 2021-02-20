@@ -8,6 +8,7 @@ plugins {
     id 'com.firstouch.version'
 }
 
+// JitPack 发布添加信息
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.snow-yu'
 
@@ -52,7 +53,6 @@ dependencies {
 
     api AndroidX.NAVIGATION_UI_KTX
     api AndroidX.NAVIGATION_FEATURES_FRAGMENT
-
 
 
     api Librarys.MATERIAL

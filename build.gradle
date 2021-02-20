@@ -10,7 +10,7 @@
         dependencies {
             classpath "com.android.tools.build:gradle:4.1.1"
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-            // jitPack 配置插件
+            // maven插件，用于把library打包成aar
             classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         }
     }
