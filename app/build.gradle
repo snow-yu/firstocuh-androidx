@@ -67,7 +67,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -75,5 +75,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(":library_base")
+
+//    implementation 'com.github.snow-yu:firstouch-androidx:1.0.0'
 
 }

@@ -8,6 +8,9 @@ plugins {
     id 'com.firstouch.version'
 }
 
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.snow'
+
 android {
     compileSdkVersion AndroidConfig.COMPILE_SDK_VERSION
 

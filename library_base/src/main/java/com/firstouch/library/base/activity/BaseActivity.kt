@@ -14,5 +14,4 @@ abstract class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity
 
 
 
-
 }
